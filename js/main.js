@@ -195,15 +195,15 @@ $(function() {
   function homeCards() {
     splitCards();
     setTimeout(function() {
-      $('.card-16:not(.menu-card-16').css('opacity', '1').removeClass('card-16-active').delay(window.CARD_DELAY).queue(function(next) {
-        $(this).css({'background': '', 'opacity': ''});
+      $('.card-16:not(.menu-card-16').css({'opacity': '1', 'background': ''}).removeClass('card-16-active').delay(window.CARD_DELAY).queue(function(next) {
+        $(this).css('opacity', '');
         $('.card-container:nth-child(1) .card-4-text').text('Code');
         $('.card-container:nth-child(2) .card-4-text').text('About');
         $('.card-container:nth-child(3) .card-4-text').text('Resume');
         $('.card-4:not(.menu-card-4) .card-4-text').fadeIn(window.CARD_DELAY);
+        $('.card-4:not(.menu-card-4)').css({'background': '', 'color': ''}).show(0);
         next();
       });
-      $('.card-4:not(.menu-card-4)').delay(window.CARD_DELAY).css({'background': '', 'color': ''}).show(0);
     }, window.CARD_DELAY * 1.5)
   }
 
